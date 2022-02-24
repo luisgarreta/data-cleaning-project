@@ -39,7 +39,7 @@ indexes  = features %>%
 
 dataMeanStd = dataWithActivities [, c(1,2, indexes+2)];
 
-#---- 5. aFrom the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.----
+#---- 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.----
 dataGroupedMean = dataMeanStd %>% group_by (Activity, Subject) %>% summarize_all (mean)
 write.table (dataGroupedMean, "table-grouped-mean-Activiy-Subject.txt", row.names=F)
 write.csv (dataGroupedMean, "table-grouped-mean-Activiy-Subject.csv", row.names=F)
